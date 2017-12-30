@@ -1,0 +1,23 @@
+{
+  "name": "bot-master",
+  "version": "1.0.0",
+  "description": "Projet de développement d'un Bot connecté à un distributeur de boissons chaudes.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "DWSparis - Julien Noyer",
+  "license": "MIT",
+  "dependencies": {
+    "allocine-api": "^0.1.9",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "my-google-news": "^3.0.0",
+    "path": "^0.12.7",
+    "recastai": "^3.7.0",
+    "say": "^0.14.0",
+    "weather-js": "^2.0.0"
+  }
+}

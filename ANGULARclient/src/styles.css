@@ -1,0 +1,656 @@
+/* 
+Reset
+*/
+
+  *{
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  html{
+    font-size: 62.5%;
+  }
+
+  body{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 100;
+    background-color: black;
+    color: white;
+  }
+
+  a, button{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+  }
+
+  li{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  li::after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  img{
+    max-width: 100%;
+  }
+
+  header, main, footer p{
+    max-width: 35rem;
+    margin: auto;
+    padding: 0 2rem;
+  }
+/**/
+
+
+
+/* 
+Style HAL EYE
+*/
+  app-hal.flexBox{
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  app-hal.flexBox #halSentences {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 20rem;
+    margin-bottom: 0;
+  }
+
+  #halEye {
+    position: relative;
+    margin: 12rem auto 0 auto;
+    width: 90%;
+    height: 30rem;
+    opacity: 1;
+    cursor: pointer;
+    
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  #smallHal.close #halEye, #smallHal.close #halSentences{
+    opacity: 0;
+  }
+
+  #smallHal #halEye {
+    width: 10rem;
+    height: 10rem;
+    margin: auto;
+    margin-left: -1rem;
+  }
+
+  #halEye article{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  #coverEye{
+    z-index: 1;
+    opacity: 0;
+  }
+
+  #coverEye.open, #smallHal.eyeOpen #coverEye{
+    opacity: 1;
+  }
+  
+  #animEye{
+    -webkit-filter: brightness(0%); /* Safari */
+    filter: brightness(0%);
+  }
+
+  #animEye img{
+    display: block;
+    width: 100%;
+    margin: auto;
+
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(190deg);
+
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  .insult #animEye img{
+    -webkit-filter: hue-rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+
+  .asking #animEye img{
+    -webkit-filter: hue-rotate(290deg);
+    filter: hue-rotate(290deg);
+  }
+
+  .thinking #animEye img{
+    -webkit-filter: hue-rotate(480deg);
+    filter: hue-rotate(480deg);
+  }
+
+  #animEye img.hide {
+    width: 80%;
+    padding-top: 2.5rem;
+    opacity: 0;
+  }
+
+  #animEye.open, #smallHal.eyeOpen #animEye{
+    -webkit-filter: brightness(100%); /* Safari */
+    filter: brightness(100%);
+  }
+
+  #halSentences {
+    font-size: 2.5rem;
+    letter-spacing: .03rem;
+    color: #218aad;
+    margin-bottom: 2rem;
+    opacity: 0;
+
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  app-homepage #halSentences {
+    text-align: center;
+  }
+
+  #halSentences.open{
+    opacity: 1;
+  }
+
+  #smallHal.shut #halSentences.open{
+    opacity: 0;
+  }
+  
+/**/
+
+
+/* 
+Style HEADER
+*/
+  header{
+    position: relative;
+  }
+
+  nav {
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-align: right;
+    text-transform: uppercase;
+    
+    position: relative;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: .1rem solid #eee;
+  }
+
+  nav li:not(:first-child){
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+
+  nav li:first-child{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  [alt="Logo Digital Workshop"] {
+    width: 4rem;
+  }
+
+  header aside {
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 100%;
+    left: 2rem;
+  }
+
+  header aside p{
+    background-color: #eee;
+    padding: .5rem;
+  }
+/**/
+
+
+/* 
+Style MAIN
+*/
+  main {
+    padding: 3rem 2rem;
+    height: 100vh;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #363794;
+  }
+
+  h1 + p {
+    margin-bottom: 2rem;
+  }
+/**/
+
+
+/* 
+Style FORM
+*/
+  form {
+    border: .1rem solid #228aac;
+    padding: 2rem;
+    opacity: 0;
+
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  form.open, app-chatbot.open form{
+    opacity: 1;
+  }
+
+  form.open.close{
+    opacity: 0;
+  }
+
+  label, input, button{
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+    border: none;
+    background: transparent;  
+  }
+
+  label{
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #006485;
+    margin-bottom: .5rem;
+  }
+
+  label b {
+    position: relative;
+    width: 15rem;
+    display: inline-block;
+  }
+
+  label span {
+    font-size: .8em;
+    color: red;
+    opacity: 0;
+
+    position: absolute;
+    left: .5rem;
+    top: -.9rem;
+
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  
+
+  label span.show{
+    opacity: 1;
+  }
+
+  input {
+    font-weight: 100;
+    color: #228aac;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-bottom: .1rem solid #228aac;
+    background-color: rgba(255, 255, 255, .1);
+    outline: none;
+  }
+
+  [type="submit"], [type="submit"] + a {
+    text-shadow: 0.3rem 0.3rem 0.5rem #044a61;
+    color: white;
+    padding: 1rem;
+    background: #006485;
+    border-bottom: .5rem solid #044a61;
+
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+
+  [type="submit"]:hover, [type="submit"]:focus{
+    background-color: #044a61;
+    border-color: #033646;
+  }
+
+  [type="submit"] + a {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: none;
+    color: #036385;
+
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
+    background: #eee;
+    border-color: #c3bfbf;
+  }
+
+  [type="submit"] + a:hover, [type="submit"] + a:focus{
+    color: white;
+    background-color: #333;
+    border-color: #222;
+  }
+/**/
+
+
+/*
+Style Chatbot
+*/
+  #conversation {
+    font-size: 3rem;
+  }
+
+  #conversation .bot {
+    color: #006485;
+    margin-top: 2rem;
+    opacity: 0;
+
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+
+  #conversation .user {
+    word-wrap: break-word;
+    position: absolute;
+    bottom: 10rem;
+    left: 0;
+    width: 100%;
+    padding: 0 2rem;
+
+    opacity: 0;
+
+    -webkit-transition: all .1s;
+    transition: all .1s;
+  }
+
+  #conversation .bot.open, #conversation .user.open{
+    opacity: 1;
+  }
+
+  #conversation .bot em{
+    color: white;
+  }
+
+  #messageForm {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  #messageForm::before {
+    content: '';
+    display: block;
+    width: calc(100% - 4rem);
+    height: .1rem;
+    background: #026285;
+    position: absolute;
+    top: -.5rem;
+  }
+
+  #messageForm input{
+    width: 88%;
+    margin-bottom: 0;
+    border: none;
+  }
+
+  #messageForm button{
+    width: 12%;
+  }
+
+  #conversation .bot ul {
+    font-size: .6em;
+    color: white;
+    margin-top: 1rem;
+    max-height: 55vh;
+    overflow: auto;
+  }
+
+  #conversation .bot li {
+    margin: .5rem auto 1rem auto;
+    line-height: 1;
+  }
+
+  #conversation .bot li.movieItemList{
+    margin-bottom: 2rem;
+  }
+
+  #conversation .bot li a {
+    font-size: .6em;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: .5rem;
+    display: block;
+    color: #398aad; 
+  }
+
+  /* Bulletin Météo */
+  .weatherCard {
+    margin-top: 2rem;
+    display: flex;
+  }
+
+  .dayCycle {
+    width: 12rem;
+    height: 12rem;
+    background-color: white;
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .dayCycle span {
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .dayInfos {
+    width: 20rem;
+    padding-left: 2rem;
+  }
+
+  #conversation .bot .dayInfos li:first-child {
+    font-weight: 900;
+    font-size: 2.5rem;
+    border-bottom: .1rem dotted rgba(255, 255, 255, .2);
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-bottom: .5rem;
+  }
+
+  .dayInfos li:last-child {
+    padding-left: 1.5rem;
+  }
+
+  .dayInfos li:first-child span {
+    font-size: 1.3rem;
+    color: #276485;
+    opacity: 1;
+  }
+
+  .dayInfos span {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: block;
+    margin-bottom: .5rem;
+    opacity: .5;
+  }
+
+  .dayInfos em {
+    font-size: .5em;
+    font-weight: 100;
+    letter-spacing: .1rem;
+  }
+
+  .fiveDays, #conversation .bot .fiveDays ul {
+    display: -moz-flex;
+    display: -webkit-flex;
+    flex-wrap: -moz-wrap;
+    flex-wrap: -webkit-wrap;
+    flex-wrap: wrap;
+    align-items: -moz-flex-start;
+    align-items: -webkit-flex-start;
+    align-items: flex-start;
+    display: flex;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  #conversation .bot .fiveDays ul {
+    width: 20%;
+    border-right: 1rem solid black;
+  }
+
+  #conversation .bot .fiveDays ul:nth-child(2){
+    color: #006485;
+  }
+
+  #conversation .bot .fiveDays ul:last-child {
+    border: none;
+    border-left: 1rem solid black;
+  }
+
+  #conversation .bot .fiveDays li {
+    width: 50%;
+    margin: 0;
+    margin-top: .5rem;
+    padding-top: .5rem;
+  }
+
+  #conversation .bot .fiveDays li:last-child {
+    width: 100%;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    border-top: .1rem dotted rgba(255, 255, 255, .3);
+    color: #006485;
+  }
+
+  #conversation .bot .fiveDays li:last-child span {
+    color: white;
+  }
+
+  .fiveDays span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 200;
+    color: #7f7f7f;
+    text-transform: initial;
+  }
+
+  .fiveDaysTitle {
+    margin: 3rem 0 -1rem 0;
+    color: white;
+    font-size: .8em;
+  }
+
+  .cityName {
+    background: #006385;
+    color: white;
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin-top: 2rem;
+  }
+
+  /* AlloCiné */
+  #conversation .bot li .movieTitle {
+    opacity: .5;
+    font-size: 1.4rem;
+  }
+
+  #conversation .bot li .movieTitle b {
+    font-size: 2.1rem;
+    font-weight: 100;
+    display: block;
+    opacity: 1;
+  }
+
+  #conversation .bot li .movieTitle + a {
+    display: initial;
+  }
+
+  #conversation .bot li img {
+    float: right;
+    max-height: 10rem;
+    margin-left: 2rem;
+  }
+/**/
+
+
+/* 
+Style FOOTER
+*/
+  footer{
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 0 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%
+  }
+
+  footer p {
+    background-color: #eee;
+    padding: 1rem;
+    border-bottom: 1rem solid white;
+  }
+
+  footer a{
+    color: #cb3728;
+  }
+/**/
+

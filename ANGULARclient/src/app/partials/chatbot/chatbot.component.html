@@ -1,0 +1,9 @@
+<section id="conversation">
+  <article class="user" [innerHTML]="DomUserMessage"  [ngClass]="{'open': newUserMessage}"></article>
+  <article class="bot" [innerHTML]="DomBotMessage" [ngClass]="{'open': newMessage}"></article>
+</section>
+
+<form action="#" (submit)="submitForm()" id="messageForm">
+  <input name="userMessage" [(ngModel)]="userMessage.content" autofocus>
+  <button type="submit">OK</button>
+</form>

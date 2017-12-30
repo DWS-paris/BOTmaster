@@ -1,0 +1,13 @@
+<section id="halEye" (click)="proceedChangeVue('login')">
+  <article id="coverEye" [ngClass]="{'open': coverEyeOpen}">
+    <img [src]="'assets/img/coverHal.png'">
+  </article>
+
+  <article id="animEye" [ngClass]="{'open': animEyeOpen}">
+    <img [src]="'assets/img/halEye.gif'" [ngClass]="{'hide': hideAnim}">
+  </article>
+</section>
+
+<section id="halSentences"  [ngClass]="{'open': showSentence}">
+  <p>{{halSentence}}</p>
+</section>

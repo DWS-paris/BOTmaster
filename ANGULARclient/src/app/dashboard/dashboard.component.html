@@ -1,0 +1,15 @@
+<div class="{{botFeeling}}">
+    <app-hal 
+        id="smallHal" class="flexBox"
+        [halSentence]="halSentence"  
+        [ngClass]="{ 'close': userRegistration, 'shut': botShutUp }" 
+        [vuePath]="'/'"
+        (changeVue)="proceedChangeVue($event)" 
+        (nextStep)="proceedNextStep($event)" 
+    ></app-hal>
+</div>
+
+<app-chatbot 
+    [ngClass]="{ 'open': showNextStep }" 
+    (sendBotFeeling)="changeBotFeeling($event)"
+></app-chatbot>
