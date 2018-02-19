@@ -19,9 +19,12 @@ Import des composants du serveur
 /*
 Configuration du serveur
 */
+    // Configuration des variables d'environnement
+    require('dotenv').config();
+
     // Définition du serveur et du port
     const app = express();
-    app.set('port', (process.env.PORT || 3000));
+    app.set('port', (process.env.PORT));
 
     // Définition du dossier static
     app.set('views', __dirname + '/www');

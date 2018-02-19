@@ -166,7 +166,8 @@ var Routing = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule 
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 // The file contents for the current environment will overwrite these during build.
 var environment = {
-    production: false
+    production: false,
+    API_ADDR: 'http://localhost:5000/api/'
 };
 //# sourceMappingURL=environment.js.map
 
