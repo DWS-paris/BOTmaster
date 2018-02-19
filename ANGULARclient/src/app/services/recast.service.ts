@@ -17,7 +17,7 @@ Définition du service
   export class RecastService {
 
     // Créer une variable pour l'adresse de l'API
-    private apiUrl: string = 'https://localhost:5000/api/';
+    private apiUrl: string = '/api/';
 
     // Injecter une variable de type Http dans le service
     constructor( private http: Http ) { }
